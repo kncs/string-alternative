@@ -23,8 +23,23 @@ describe('General module structure tests', function () {
       done();
     });
 
-    it('should have method zeroOneN()', function (done) {
-      expect(sa.zeroOneN).to.be.a('function');
+    it('should have method zero()', function (done) {
+      expect(sa.zero).to.be.a('function');
+      done();
+    });
+
+    it('should have method one()', function (done) {
+      expect(sa.one).to.be.a('function');
+      done();
+    });
+
+    it('should have method many()', function (done) {
+      expect(sa.many).to.be.a('function');
+      done();
+    });
+
+    it('should have method zom()', function (done) {
+      expect(sa.zom).to.be.a('function');
       done();
     });
   });
@@ -43,19 +58,55 @@ describe('Functionnal tests', function () {
     });
   });
 
-  describe('zeroOneN() function', function () {
+  describe('zero() function', function () {
+    it('should return an empty string', function (done) {
+      expect(sa.count(1).zero('zero').toString()).to.be.a('string').to.be.empty;
+      done();
+    });
+
     it('should select the zero string description', function (done) {
-      expect(sa.count(0).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('zero');
+      expect(sa.count(0).zero('zero').toString()).to.be.equal('zero');
+      done();
+    });
+  });
+
+  describe('one() function', function () {
+    it('should return an empty string', function (done) {
+      expect(sa.count(0).one('one').toString()).to.be.a('string').to.be.empty;
       done();
     });
 
     it('should select the one string description', function (done) {
-      expect(sa.count(1).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('one');
+      expect(sa.count(1).one('one').toString()).to.be.equal('one');
+      done();
+    });
+  });
+
+  describe('many() function', function () {
+    it('should return an empty string', function (done) {
+      expect(sa.count(0).many('many').toString()).to.be.a('string').to.be.empty;
       done();
     });
 
     it('should select the many string description', function (done) {
-      expect(sa.count(5).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('many');
+      expect(sa.count(5).many('many').toString()).to.be.equal('many');
+      done();
+    });
+  });
+
+  describe('zom() function', function () {
+    it('should select the zero string description', function (done) {
+      expect(sa.count(0).zom('_zero', '_one', '_many').toString()).to.be.equal('_zero');
+      done();
+    });
+
+    it('should select the one string description', function (done) {
+      expect(sa.count(1).zom('_zero', '_one', '_many').toString()).to.be.equal('_one');
+      done();
+    });
+
+    it('should select the many string description', function (done) {
+      expect(sa.count(5).zom('_zero', '_one', '_many').toString()).to.be.equal('_many');
       done();
     });
   });
