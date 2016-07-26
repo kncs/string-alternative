@@ -22,12 +22,16 @@ describe('General module structure tests', function () {
       expect(sa.toString).to.be.a('function');
       done();
     });
+
+    it('should have method zeroOneN()', function (done) {
+      expect(sa.zeroOneN).to.be.a('function');
+      done();
+    });
   });
 });
 
 describe('Functionnal tests', function () {
-  describe('count function', function () {
-
+  describe('count() function', function () {
     it('should not initialize the count and return an empty string', function (done) {
       expect(sa.toString()).to.be.a('string').to.be.empty;
       done();
@@ -35,6 +39,23 @@ describe('Functionnal tests', function () {
 
     it('should initialize the count and return it into a string', function (done) {
       expect(sa.count(0).toString()).to.be.equal('0');
+      done();
+    });
+  });
+
+  describe('zeroOneN() function', function () {
+    it('should select the zero string description', function (done) {
+      expect(sa.count(0).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('zero');
+      done();
+    });
+
+    it('should select the one string description', function (done) {
+      expect(sa.count(1).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('one');
+      done();
+    });
+
+    it('should select the many string description', function (done) {
+      expect(sa.count(5).zeroOneN('zero', 'one', 'many').toString()).to.be.equal('many');
       done();
     });
   });
