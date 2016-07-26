@@ -1,7 +1,7 @@
 {
   "name": "string-alternative",
   "version": "0.0.1",
-  "description": "This module allow you to give some alternatives to a string with specifics conditions",
+  "description": "This module allow you to give some alternatives to a string with specific conditions",
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha -R spec ./tests/test.js"
