@@ -15,7 +15,21 @@
   "author": "Kevin Clarens",
   "license": "MIT",
   "dependencies": {
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kncs/string-alternative.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kncs/string-alternative/issues"
+  },
+  "homepage": "https://github.com/kncs/string-alternative#readme"
 }
