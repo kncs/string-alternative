@@ -1,0 +1,21 @@
+{
+  "name": "string-alternative",
+  "version": "0.0.1",
+  "description": "This module allow you to give some alternatives to a string with specifics conditions",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha -R spec ./tests/test.js"
+  },
+  "keywords": [
+    "String",
+    "alternative",
+    "node",
+    "module"
+  ],
+  "author": "Kevin Clarens",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
