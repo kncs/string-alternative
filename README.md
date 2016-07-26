@@ -17,18 +17,19 @@ for(var i=0; i<=10; i++) {
     .many( i + ' people are viewing');
 
   console.log(sa.toString());
+}
 
-  // Nobody is viewing
-  // One person is viewing
-  // 2 people are viewing
-  // 3 people are viewing
-  // 4 people are viewing
-  // 5 people are viewing
-  // 6 people are viewing
-  // 7 people are viewing
-  // 8 people are viewing
-  // 9 people are viewing
-  // 10 people are viewing
+// Nobody is viewing
+// One person is viewing
+// 2 people are viewing
+// 3 people are viewing
+// 4 people are viewing
+// 5 people are viewing
+// 6 people are viewing
+// 7 people are viewing
+// 8 people are viewing
+// 9 people are viewing
+// 10 people are viewing
 ```
 
 # Motivation
