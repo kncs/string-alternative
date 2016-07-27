@@ -42,6 +42,11 @@ describe('General module structure tests', function () {
       expect(StringAlternative().zom).to.be.a('function');
       done();
     });
+
+    it('should have method default()', function (done) {
+      expect(StringAlternative().default).to.be.a('function');
+      done();
+    });
   });
 });
 
@@ -107,6 +112,15 @@ describe('Functionnal tests', function () {
 
     it('should select the many string description', function (done) {
       expect(StringAlternative().count(5).zom('_zero', '_one', '_many').toString()).to.be.equal('_many');
+      done();
+    });
+  });
+
+  describe('default() function', function () {
+    it('should return the default string when alternative string is not defined', function (done) {
+      expect(StringAlternative().default('default0').count(0).one('one').toString()).to.be.equal('default0');
+      expect(StringAlternative().default('default1').count(1).many('many').toString()).to.be.equal('default1');
+      expect(StringAlternative().default('default2').count(2).one('one').toString()).to.be.equal('default2');
       done();
     });
   });
