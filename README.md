@@ -4,11 +4,18 @@ String Alternative is a very small and simple javascript module created to help 
 
 Because a code example is probably more explicit than a long speech ...
 
-# Code Example
+# Installation
+
+```bash
+$ npm install --save string-alternative
+```
+
+# Code Examples
 
 ```javascript
 var StringAlternative = require('string-alternative');
 
+/* zero, one and many example */
 for(var i=0; i<=10; i++) {
   var sa = StringAlternative()
     .count(i)
@@ -30,6 +37,31 @@ for(var i=0; i<=10; i++) {
 // 8 people are viewing
 // 9 people are viewing
 // 10 people are viewing
+
+/* default, prefix and suffix example */
+
+for(var i=0; i<=10; i++) {
+  var sa = StringAlternative()
+    .default(' result')
+    .prefix('I found ' + i)
+    .many(' results')
+    .suffix(' matching with you research !')
+    .count(i);
+
+  console.log(sa.toString());
+}
+
+// I found 0 result matching with you research !
+// I found 1 result matching with you research !
+// I found 2 results matching with you research !
+// I found 3 results matching with you research !
+// I found 4 results matching with you research !
+// I found 5 results matching with you research !
+// I found 6 results matching with you research !
+// I found 7 results matching with you research !
+// I found 8 results matching with you research !
+// I found 9 results matching with you research !
+// I found 10 results matching with you research !
 ```
 
 # Motivation
@@ -37,12 +69,6 @@ for(var i=0; i<=10; i++) {
 At the very begining of this project, the aim was to create a tiny module to manage one specific use case, ie allow a developper to get a readable and a super easy way for build different strings according to a number (0=>'No result', 1=>'One result', N=>'N results').
 
 But why should I restrict the condition to be a equal to zero, one or many ? There is absolutly no reason and that's why I decided to implement other conditions (above, below, between, oneOf, ...)
-
-# Installation
-
-```bash
-$ npm install --save string-alternative
-```
 
 # API Reference
 
