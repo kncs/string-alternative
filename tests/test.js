@@ -7,45 +7,29 @@ var chai = require('chai')
  * First of all, check the module structure
  */
 describe('General module structure tests', function () {
+
+  var functionList = [
+    'count',
+    'toString',
+    'zero',
+    'one',
+    'many',
+    'zom',
+    'default'
+  ];
+
   describe('Library', function () {
+
     it('should be a function', function (done) {
       expect(StringAlternative).to.be.a('function');
       done();
     });
 
-    it('should have method count()', function (done) {
-      expect(StringAlternative().count).to.be.a('function');
-      done();
-    });
-
-    it('should have method toString()', function (done) {
-      expect(StringAlternative().toString).to.be.a('function');
-      done();
-    });
-
-    it('should have method zero()', function (done) {
-      expect(StringAlternative().zero).to.be.a('function');
-      done();
-    });
-
-    it('should have method one()', function (done) {
-      expect(StringAlternative().one).to.be.a('function');
-      done();
-    });
-
-    it('should have method many()', function (done) {
-      expect(StringAlternative().many).to.be.a('function');
-      done();
-    });
-
-    it('should have method zom()', function (done) {
-      expect(StringAlternative().zom).to.be.a('function');
-      done();
-    });
-
-    it('should have method default()', function (done) {
-      expect(StringAlternative().default).to.be.a('function');
-      done();
+    functionList.map(function(name) {
+      return it('should have method '+ name +'()', function (done) {
+        expect(StringAlternative()[name]).to.be.a('function');
+        done();
+      });
     });
   });
 });
