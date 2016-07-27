@@ -107,6 +107,7 @@ describe('Functionnal tests', function () {
       expect(StringAlternative().default('default0').count(0).one('one').toString()).to.be.equal('default0');
       expect(StringAlternative().default('default1').count(1).many('many').toString()).to.be.equal('default1');
       expect(StringAlternative().default('default2').count(2).one('one').toString()).to.be.equal('default2');
+      expect(StringAlternative().default('default').count(1).one('one').toString()).to.be.equal('one');
       done();
     });
   });
