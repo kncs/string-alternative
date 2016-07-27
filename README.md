@@ -58,6 +58,10 @@ Define a default string returned by the toString method when an alternative stri
 
 Define a string to prefix result returned by the toString method
 
+## `.suffix(str)`
+
+Define a string to suffix result returned by the toString method
+
 ## `.toString()`
 
 Return the alternative string matching with condition
@@ -84,15 +88,13 @@ See below the list of next features which will be imlemented as soon as possible
 
 * ~~.default(str)~~
 * ~~.prefix(str)~~
-* .suffix(str)
+* ~~.suffix(str)~~
 * .above(trigger, str)
 * .below(trigger, str)
 * .between(startTrigger, endTrigger, str)
 * .oneOf(array, str)
 * .equal(value, str)
 * ...
-
-
 
 # License
 
