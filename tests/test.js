@@ -15,7 +15,8 @@ describe('General module structure tests', function () {
     'one',
     'many',
     'zom',
-    'default'
+    'default',
+    'prefix'
   ];
 
   describe('Library', function () {
@@ -105,6 +106,16 @@ describe('Functionnal tests', function () {
       expect(StringAlternative().default('default0').count(0).one('one').toString()).to.be.equal('default0');
       expect(StringAlternative().default('default1').count(1).many('many').toString()).to.be.equal('default1');
       expect(StringAlternative().default('default2').count(2).one('one').toString()).to.be.equal('default2');
+      done();
+    });
+  });
+
+  describe('prefix() function', function () {
+    it('should return the prefix string before alternative strings', function (done) {
+      expect(StringAlternative().prefix('prefix_').default('default').toString()).to.be.equal('prefix_default');
+      expect(StringAlternative().prefix('prefix_').count(0).zero('zero').toString()).to.be.equal('prefix_zero');
+      expect(StringAlternative().prefix('prefix_').count(1).one('one').toString()).to.be.equal('prefix_one');
+      expect(StringAlternative().prefix('prefix_').count(2).many('many').toString()).to.be.equal('prefix_many');
       done();
     });
   });
