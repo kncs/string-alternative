@@ -50,6 +50,10 @@ $ npm install --save string-alternative
 
 Define a number used as reference into the conditions
 
+## `.default(str)`
+
+Define a default string returned by the toString method when an alternative string is not defined
+
 ## `.toString()`
 
 Return the alternative string matching with condition
@@ -74,7 +78,7 @@ Define the three alternatives strings
 
 See below the list of next features which will be imlemented as soon as possible :
 
-* .default(str)
+* ~~.default(str)~~
 * .prefix(str)
 * .suffix(str)
 * .above(trigger, str)
