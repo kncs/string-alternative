@@ -54,6 +54,10 @@ Define a number used as reference into the conditions
 
 Define a default string returned by the toString method when an alternative string is not defined
 
+## `.prefix(str)`
+
+Define a string to prefix result returned by the toString method
+
 ## `.toString()`
 
 Return the alternative string matching with condition
@@ -79,7 +83,7 @@ Define the three alternatives strings
 See below the list of next features which will be imlemented as soon as possible :
 
 * ~~.default(str)~~
-* .prefix(str)
+* ~~.prefix(str)~~
 * .suffix(str)
 * .above(trigger, str)
 * .below(trigger, str)
