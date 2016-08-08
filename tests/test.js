@@ -134,8 +134,13 @@ describe('Functionnal tests', function () {
   });
 
   describe('below() function', function () {
+    before(function() {
+      // runs before all tests in this block
+    });
+
     it('should return the alternative string corresponding to the below trigger', function (done) {
-      var sa = StringAlternative().default('default').zom('zero', 'one', 'many').below(10, 'below 10');
+      var sa = StringAlternative();
+      sa.default('default').zom('zero', 'one', 'many').below(10, 'below 10');
 
       expect(sa.count(0).toString()).to.be.equal('zero');
       expect(sa.count(1).toString()).to.be.equal('one');
@@ -144,7 +149,8 @@ describe('Functionnal tests', function () {
       expect(sa.count(10).below(100, 'below 100').toString()).to.be.equal('below 100');
       expect(sa.count(100).below(100, 'below 100').toString()).to.be.equal('many');
 
-      var sa = StringAlternative().default('default').below(10, 'below 10');
+      var sa = StringAlternative();
+      sa.default('default').below(10, 'below 10');
       expect(sa.count(0).toString()).to.be.equal('below 10');
       expect(sa.count(1).toString()).to.be.equal('below 10');
       expect(sa.count(2).toString()).to.be.equal('below 10');
