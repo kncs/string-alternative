@@ -167,7 +167,7 @@ describe('Functionnal tests', function () {
       expect(sa.count(2).toString()).to.be.equal('many');
       expect(sa.count(12).toString()).to.be.equal('above 10');
       expect(sa.count(12).above(100, 'above 100').toString()).to.be.equal('above 10');
-      expect(sa.count(101).above(100, 'above 100').toString()).to.be.equal('above100');
+      expect(sa.count(101).above(100, 'above 100').toString()).to.be.equal('above 100');
 
       var sa = StringAlternative();
       sa.default('default').above(10, 'above 10');
