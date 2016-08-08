@@ -18,7 +18,8 @@ describe('General module structure tests', function () {
     'default',
     'prefix',
     'suffix',
-    'below'
+    'below',
+    'above'
   ];
 
   describe('Library', function () {
@@ -134,10 +135,6 @@ describe('Functionnal tests', function () {
   });
 
   describe('below() function', function () {
-    before(function() {
-      // runs before all tests in this block
-    });
-
     it('should return the alternative string corresponding to the below trigger', function (done) {
       var sa = StringAlternative();
       sa.default('default').zom('zero', 'one', 'many').below(10, 'below 10');
@@ -156,6 +153,29 @@ describe('Functionnal tests', function () {
       expect(sa.count(2).toString()).to.be.equal('below 10');
       expect(sa.count(10).toString()).to.be.equal('default');
 
+      done();
+    });
+  });
+
+  describe('above() function', function () {
+    it('should return the alternative string corresponding to the above trigger', function (done) {
+      var sa = StringAlternative();
+      sa.default('default').zom('zero', 'one', 'many').above(10, 'above 10');
+
+      expect(sa.count(0).toString()).to.be.equal('zero');
+      expect(sa.count(1).toString()).to.be.equal('one');
+      expect(sa.count(2).toString()).to.be.equal('many');
+      expect(sa.count(12).toString()).to.be.equal('above 10');
+      expect(sa.count(12).above(100, 'above 100').toString()).to.be.equal('above 10');
+      expect(sa.count(101).above(100, 'above 100').toString()).to.be.equal('above100');
+
+      var sa = StringAlternative();
+      sa.default('default').above(10, 'above 10');
+      expect(sa.count(0).toString()).to.be.equal('default');
+      expect(sa.count(1).toString()).to.be.equal('default');
+      expect(sa.count(10).toString()).to.be.equal('default');
+      expect(sa.count(11).toString()).to.be.equal('above 10');
+      expect(sa.count(1000).toString()).to.be.equal('above 10');
       done();
     });
   });
