@@ -17,7 +17,8 @@ describe('General module structure tests', function () {
     'zom',
     'default',
     'prefix',
-    'suffix'
+    'suffix',
+    'below'
   ];
 
   describe('Library', function () {
@@ -128,6 +129,27 @@ describe('Functionnal tests', function () {
       expect(StringAlternative().count(0).zero('zero').suffix('_suffix').toString()).to.be.equal('zero_suffix');
       expect(StringAlternative().count(1).one('one').suffix('_suffix').toString()).to.be.equal('one_suffix');
       expect(StringAlternative().count(2).many('many').suffix('_suffix').toString()).to.be.equal('many_suffix');
+      done();
+    });
+  });
+
+  describe('below() function', function () {
+    it('should return the alternative string corresponding to the below trigger', function (done) {
+      var sa = StringAlternative().default('default').zom('zero', 'one', 'many').below(10, 'below 10');
+
+      expect(sa.count(0).toString()).to.be.equal('zero');
+      expect(sa.count(1).toString()).to.be.equal('one');
+      expect(sa.count(2).toString()).to.be.equal('below 10');
+      expect(sa.count(10).toString()).to.be.equal('many');
+      expect(sa.count(10).below(100, 'below 100').toString()).to.be.equal('below 100');
+      expect(sa.count(100).below(100, 'below 100').toString()).to.be.equal('many');
+
+      var sa = StringAlternative().default('default').below(10, 'below 10');
+      expect(sa.count(0).toString()).to.be.equal('below 10');
+      expect(sa.count(1).toString()).to.be.equal('below 10');
+      expect(sa.count(2).toString()).to.be.equal('below 10');
+      expect(sa.count(10).toString()).to.be.equal('default');
+
       done();
     });
   });
