@@ -16,7 +16,7 @@ $ npm install --save string-alternative
 var StringAlternative = require('string-alternative');
 
 /* zero, one and many example */
-for(var i=0; i<=10; i++) {
+for(var i=0; i<=5; i++) {
   var sa = StringAlternative()
     .count(i)
     .zero('Nobody is viewing')
@@ -32,15 +32,10 @@ for(var i=0; i<=10; i++) {
 // 3 people are viewing
 // 4 people are viewing
 // 5 people are viewing
-// 6 people are viewing
-// 7 people are viewing
-// 8 people are viewing
-// 9 people are viewing
-// 10 people are viewing
 
 /* default, prefix and suffix example */
 
-for(var i=0; i<=10; i++) {
+for(var i=0; i<=5; i++) {
   var sa = StringAlternative()
     .default(' result')
     .prefix('I found ' + i)
@@ -57,11 +52,6 @@ for(var i=0; i<=10; i++) {
 // I found 3 results matching with you research !
 // I found 4 results matching with you research !
 // I found 5 results matching with you research !
-// I found 6 results matching with you research !
-// I found 7 results matching with you research !
-// I found 8 results matching with you research !
-// I found 9 results matching with you research !
-// I found 10 results matching with you research !
 ```
 
 # Motivation
@@ -108,6 +98,16 @@ Define the "alternative string" for a reference number above one
 
 Define the three alternatives strings
 
+## `.above(trigger, str)`
+
+Define the alternative string for a reference number above a trigger.
+Priority is given to the higher number
+
+## `.below(trigger, str)`
+
+Define the alternative string for a reference number below a trigger.
+Priority is given to the lower number
+
 # Roadmap
 
 See below the list of next features which will be imlemented as soon as possible :
@@ -115,8 +115,8 @@ See below the list of next features which will be imlemented as soon as possible
 * ~~.default(str)~~
 * ~~.prefix(str)~~
 * ~~.suffix(str)~~
-* .above(trigger, str)
-* .below(trigger, str)
+* ~~.above(trigger, str)~~
+* ~~.below(trigger, str)~~
 * .between(startTrigger, endTrigger, str)
 * .oneOf(array, str)
 * .equal(value, str)
